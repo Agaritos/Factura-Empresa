@@ -8,9 +8,20 @@ Con el fin de mejorar la gestión administrativa del negocio, se desarrolló el 
 Este sistema está diseñado como una herramienta de apoyo para un negocio familiar, facilitando tareas básicas como el registro de productos, el control de ventas y la consulta de información comercial de manera rápida y ordenada. Además, su diseño busca ser simple e intuitivo, permitiendo que los usuarios puedan utilizarlo fácilmente sin requerir conocimientos técnicos avanzados.
 
 De esta manera, el sistema contribuye a mejorar la organización del negocio, optimizar el registro de las ventas diarias y brindar un mejor control sobre la información relacionada con los productos y las transacciones realizadas.
-
+<h1 align="center">Inicio</h1>
 <p align="center">
-  <img src="inicio.png" width="700">
+  <img src="inicio.PNG" width="700">
 </p>
-
+<h1 align="center">Facturación</h1>
+<p align="center">
+  <img src="segundo.PNG" width="700">
+</p>
+<h1 align="center">Inventario</h1>
+<p align="center">
+  <img src="tercero.PNG" width="700">
+</p> <h1 align="center">Historial</h1>
+<p align="center">
+ 
+  <img src="cuarto.PNG" width="700">
+</p>
 Vista principal del Sistema de Facturación y Registro de Ventas.
