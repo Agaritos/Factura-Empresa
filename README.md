@@ -10,7 +10,7 @@ Este sistema está diseñado como una herramienta de apoyo para un negocio famil
 De esta manera, el sistema contribuye a mejorar la organización del negocio, optimizar el registro de las ventas diarias y brindar un mejor control sobre la información relacionada con los productos y las transacciones realizadas.
 
 <p align="center">
-  <img src="img/inicio.png" width="700">
+  <img src="inicio.png" width="700">
 </p>
 
 Vista principal del Sistema de Facturación y Registro de Ventas.
