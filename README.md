@@ -25,7 +25,8 @@ De esta manera, el sistema contribuye a mejorar la organización del negocio, op
   <img src="cuarto.PNG" width="700">
 </p>
 Vista principal del Sistema de Facturación y Registro de Ventas.
-
-<h1>Diagrama Entidad - Relación</h1>
-
- <img src="Diagrama Entidad -Relacion.PNG" width="700">
+<br>
+ <h1 align="center">Diagrama Entidad - Relación</h1>
+<p align="center">
+  <img src="Diagrama Entidad -Relacion.PNG" width="700">
+</p>
