@@ -9,7 +9,7 @@ CREATE TABLE Usuarios (
     id_usuario INT IDENTITY(1,1) PRIMARY KEY,
     nombre NVARCHAR(100) NOT NULL,
     rol NVARCHAR(20) NOT NULL CHECK (rol IN ('administrador', 'vendedor')),
-    contrase�a NVARCHAR(255) NOT NULL
+    contraseña NVARCHAR(255) NOT NULL
 );
 
 
@@ -51,7 +51,7 @@ CREATE TABLE Facturas (
 );
 
 
-INSERT INTO Usuarios (nombre, rol, contrase�a) VALUES
+INSERT INTO Usuarios (nombre, rol, contraseña) VALUES
 ('Ana Lopez', 'administrador', '1234'),
 ('Carlos Perez', 'vendedor', '1234'),
 ('Maria Gomez', 'vendedor', '1234'),
@@ -66,11 +66,11 @@ INSERT INTO Usuarios (nombre, rol, contrase�a) VALUES
 
 INSERT INTO Productos (nombre, marca, categoria, precio) VALUES
 ('Labial Mate', 'Maybelline', 'Maquillaje', 25000),
-('Base Liquida', 'LOr�al', 'Maquillaje', 45000),
+('Base Liquida', 'LOréal', 'Maquillaje', 45000),
 ('Rimel', 'MAC', 'Maquillaje', 38000),
 ('Crema Facial', 'Nivea', 'Cuidado', 30000),
 ('Perfume Floral', 'Dior', 'Fragancia', 120000),
-('Esmalte Rojo', 'OPI', 'U�as', 15000),
+('Esmalte Rojo', 'OPI', 'Uñas', 15000),
 ('Shampoo Reparador', 'Pantene', 'Cabello', 28000),
 ('Acondicionador', 'Sedal', 'Cabello', 26000),
 ('Protector Solar', 'La Roche', 'Cuidado', 60000),
@@ -115,3 +115,125 @@ INSERT INTO Facturas (id_venta, total) VALUES
 (8, 60000),
 (9, 40000),
 (10, 110000);
+
+CREATE PROCEDURE sp_crear_usuario
+    @nombre NVARCHAR(100),
+    @rol NVARCHAR(20),
+    @contraseña NVARCHAR(255)
+AS
+INSERT INTO Usuarios (nombre, rol, contraseña)
+VALUES (@nombre, @rol, @contraseña);
+GO
+
+CREATE PROCEDURE sp_listar_usuarios
+AS
+SELECT * FROM Usuarios;
+GO
+
+CREATE PROCEDURE sp_actualizar_usuario
+    @id_usuario INT,
+    @nombre NVARCHAR(100),
+    @rol NVARCHAR(20),
+    @contraseña NVARCHAR(255)
+AS
+UPDATE Usuarios
+SET nombre = @nombre,
+    rol = @rol,
+    contraseña = @contraseña
+WHERE id_usuario = @id_usuario;
+GO
+
+CREATE PROCEDURE sp_eliminar_usuario
+    @id_usuario INT
+AS
+DELETE FROM Usuarios WHERE id_usuario = @id_usuario;
+GO
+
+-- PRODUCTOS
+CREATE PROCEDURE sp_crear_producto
+    @nombre NVARCHAR(100),
+    @marca NVARCHAR(100),
+    @categoria NVARCHAR(50),
+    @precio DECIMAL(10,2)
+AS
+INSERT INTO Productos (nombre, marca, categoria, precio)
+VALUES (@nombre, @marca, @categoria, @precio);
+GO
+
+CREATE PROCEDURE sp_listar_productos
+AS
+SELECT * FROM Productos;
+GO
+
+CREATE PROCEDURE sp_actualizar_producto
+    @id_producto INT,
+    @nombre NVARCHAR(100),
+    @marca NVARCHAR(100),
+    @categoria NVARCHAR(50),
+    @precio DECIMAL(10,2)
+AS
+UPDATE Productos
+SET nombre = @nombre,
+    marca = @marca,
+    categoria = @categoria,
+    precio = @precio
+WHERE id_producto = @id_producto;
+GO
+
+CREATE PROCEDURE sp_eliminar_producto
+    @id_producto INT
+AS
+DELETE FROM Productos WHERE id_producto = @id_producto;
+GO
+
+-- VENTAS
+CREATE PROCEDURE sp_crear_venta
+    @id_usuario INT,
+    @total DECIMAL(10,2)
+AS
+BEGIN
+    INSERT INTO Ventas (id_usuario, total)
+    VALUES (@id_usuario, @total);
+
+    SELECT SCOPE_IDENTITY() AS id_venta;
+END;
+GO
+
+-- DETALLE
+CREATE PROCEDURE sp_agregar_detalle
+    @id_venta INT,
+    @id_producto INT,
+    @cantidad INT,
+    @precio_unitario DECIMAL(10,2)
+AS
+INSERT INTO Detalle_Venta (id_venta, id_producto, cantidad, precio_unitario)
+VALUES (@id_venta, @id_producto, @cantidad, @precio_unitario);
+GO
+
+-- FACTURA
+CREATE PROCEDURE sp_crear_factura
+    @id_venta INT,
+    @total DECIMAL(10,2)
+AS
+INSERT INTO Facturas (id_venta, total)
+VALUES (@id_venta, @total);
+GO
+
+/* =========================================
+   VISTA
+========================================= */
+
+CREATE VIEW vw_ventas_detalladas AS
+SELECT 
+    v.id_venta,
+    v.fecha,
+    u.nombre AS vendedor,
+    p.nombre AS producto,
+    d.cantidad,
+    d.precio_unitario,
+    (d.cantidad * d.precio_unitario) AS subtotal
+FROM Ventas v
+INNER JOIN Usuarios u ON v.id_usuario = u.id_usuario
+INNER JOIN Detalle_Venta d ON v.id_venta = d.id_venta
+INNER JOIN Productos p ON d.id_producto = p.id_producto;
+GO
