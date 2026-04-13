@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#ebe0e0",
+              "on-surface": "#1b1c1c",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#f2f0f0",
+              "primary-fixed-dim": "#ebbbbb",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#724d4e",
+              "surface-variant": "#e4e2e2",
+              "surface-container-low": "#f5f3f3",
+              "primary-fixed": "#ffdad9",
+              "secondary-fixed-dim": "#cec4c4",
+              "on-tertiary-fixed-variant": "#5c3f40",
+              "surface-container-high": "#eae8e7",
+              "on-error-container": "#93000a",
+              "primary-container": "#f2c1c1",
+              "on-secondary-container": "#6a6363",
+              "inverse-surface": "#303030",
+              "tertiary-fixed-dim": "#e5bdbd",
+              "surface-bright": "#fbf9f8",
+              "surface-container-highest": "#e4e2e2",
+              "on-background": "#1b1c1c",
+              "outline": "#827473",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#ffdad9",
+              "error": "#ba1a1a",
+              "secondary": "#645d5d",
+              "background": "#fbf9f8",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#4c4546",
+              "surface": "#fbf9f8",
+              "primary": "#7a5555",
+              "surface-tint": "#7a5555",
+              "secondary-container": "#ebe0e0",
+              "tertiary-container": "#ecc3c3",
+              "on-tertiary-fixed": "#2c1516",
+              "on-surface-variant": "#504444",
+              "on-tertiary-container": "#6d4f4f",
+              "surface-dim": "#dbd9d9",
+              "on-primary-fixed": "#2f1315",
+              "on-secondary-fixed": "#1f1a1b",
+              "inverse-primary": "#ebbbbb",
+              "tertiary": "#765757",
+              "surface-container": "#efeded",
+              "outline-variant": "#d4c2c2",
+              "on-primary-fixed-variant": "#603e3e"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #7a5555 0%, #f2c1c1 100%);
+        }
+        .glass-nav {
+            background-color: rgba(251, 249, 248, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 bg-surface-container border-r border-transparent flex flex-col fixed h-full z-30">
+<div class="p-8">
+<h1 class="font-headline text-headline-lg text-primary font-bold tracking-tight">Velvet Petal</h1>
+<p class="font-label text-xs tracking-widest text-on-secondary-fixed-variant opacity-70 mt-1">SISTEMA DE FACTURACIÓN</p>
+</div>
+<nav class="mt-8 px-4 flex-grow space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant" href="inicioo.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-medium">Inicio</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant" href="ventas.html">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span class="font-medium">Ventas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-full bg-surface-container-lowest text-primary shadow-sm" href="Inventario.html">
+<div class="w-1 h-6 bg-primary rounded-full absolute left-0"></div>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-bold">Productos</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant" href="Historial.html">
+<span class="material-symbols-outlined">history</span>
+<span class="font-medium">Historial</span>
+</a>
+</nav>
+<div class="p-8 border-t border-outline-variant/10">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Perfil de usuario en primer plano" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1JHHzWoSGp1BL_ALmi5FsPo0XrZb37uiarCRUsJIsxciuI6uXaUCfhkInYOrrIYu1n55hfBrOV_qftK7g-XxgqF9SGjRiPXsISnSz1M495xUVQUm3oWiUXfh2IuCglOormZjxU7MaKIrdOK0subK0XzH15_KNiFXjcdTdgik23SL0iaqB5CgQOLI4AWJk2cFrn4d03iFfIXYKTzYbCWyf_JNfGVtUlx4-_stMs8zUcHjxB2o-hkM03QFOAV0aXXTrYf-gm5jXlB_I"/>
+<div>
+<p class="text-sm font-bold leading-none">Admin Usuario</p>
+<p class="text-xs text-on-surface-variant mt-1">Perfil de Usuario</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-grow ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="glass-nav sticky top-0 z-20 px-10 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<h2 class="font-headline text-xl font-bold text-on-surface">SFRV-PB</h2>
+<span class="text-outline-variant opacity-30">|</span>
+<span class="text-sm text-on-surface-variant font-medium">Inventario de Productos</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex flex-col items-end gap-1">
+<p id="header-user" class="text-sm font-bold text-on-surface leading-none">Cargando...</p>
+<p id="header-role" class="text-[10px] text-on-surface-variant uppercase tracking-widest">Cargando...</p>
+</div>
+<button onclick="logout()" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors" title="Cerrar sesión">
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+</header>
+<div class="p-10 max-w-7xl mx-auto">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+<div class="space-y-2">
+<span class="font-label text-xs tracking-[0.15em] text-primary font-bold uppercase">Registros Maestros</span>
+<h3 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface">Inventario de Productos</h3>
+<p class="text-on-surface-variant max-w-md">Gestiona y controla el stock de productos con herramientas avanzadas de inventario.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-4">
+<input id="search-product" class="flex-1 bg-surface-container-lowest rounded-lg px-4 py-3 text-on-surface" placeholder="Buscar productos..." type="text"/>
+<button id="add-product" class="signature-gradient text-on-primary px-6 py-3 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined">add</span>
+<span>Agregar Producto</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Stats Overview (Asymmetric Bento) -->
+<section class="grid grid-cols-12 gap-6 mb-16">
+<div class="col-span-12 lg:col-span-7 bg-surface-container-lowest p-8 rounded-lg shadow-sm flex flex-col justify-between min-h-[220px]">
+<div>
+<span class="font-label text-xs tracking-widest text-on-surface-variant uppercase">Total Productos</span>
+<h4 id="total-productos" class="text-5xl font-headline font-extrabold text-on-surface mt-2">0</h4>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">trending_up</span>
+<span>+ nuevos esta semana</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-2 bg-primary-container/30 p-8 rounded-lg flex flex-col justify-between border border-primary-container/20">
+<span class="material-symbols-outlined text-primary text-3xl">receipt_long</span>
+<div class="mt-4">
+<p class="text-sm font-medium text-on-primary-container opacity-80">Productos Bajos en Stock</p>
+<p id="bajos-stock" class="text-3xl font-headline font-bold text-on-primary-container">0</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-3 bg-secondary-container p-8 rounded-lg flex flex-col justify-between">
+<span class="material-symbols-outlined text-secondary text-3xl">person</span>
+<div class="mt-4">
+<p class="text-sm font-medium text-on-secondary-container opacity-80">Valor Total Inventario</p>
+<p id="valor-total" class="text-3xl font-headline font-bold text-on-secondary-container">$0.00</p>
+</div>
+</div>
+</section>
+<!-- Product List -->
+<section>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-6">Lista de Productos</h3>
+<table class="w-full bg-surface-container-lowest rounded-lg overflow-hidden">
+<thead class="bg-surface-container-high">
+<tr>
+<th class="p-4 text-left">Producto</th>
+<th class="p-4 text-left">Stock</th>
+<th class="p-4 text-left">Precio</th>
+<th class="p-4 text-left">Acciones</th>
+</tr>
+</thead>
+<tbody id="product-list">
+<tr class="border-t border-surface-container-high">
+<td class="p-4">Suero Revitalizante Peonía</td>
+<td class="p-4">25</td>
+<td class="p-4">$45.00</td>
+<td class="p-4">
+<button class="text-primary mr-2">Editar</button>
+<button class="text-error">Eliminar</button>
+</td>
+</tr>
+<tr class="border-t border-surface-container-high">
+<td class="p-4">Labial Terciopelo Rosa</td>
+<td class="p-4">10</td>
+<td class="p-4">$28.00</td>
+<td class="p-4">
+<button class="text-primary mr-2">Editar</button>
+<button class="text-error">Eliminar</button>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- Load More / Pagination -->
+<div class="mt-16 flex justify-center">
+<button class="px-10 py-3 border border-outline-variant/20 text-primary font-bold rounded-full hover:bg-surface-container-low transition-colors flex items-center gap-2">
+                        Cargar Ventas Anteriores
+                        <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Footer Brand Branding -->
+<footer class="mt-20 border-t border-outline-variant/10 p-10 flex flex-col items-center">
+<div class="signature-gradient w-12 h-1 rounded-full mb-6"></div>
+<p class="font-headline font-bold text-on-surface opacity-60">Velvet Petal SFRV-PB</p>
+<p class="text-xs text-on-surface-variant mt-1">© 2024 Todos los derechos reservados. Edición Profesional.</p>
+</footer>
+</main>
+</div>
+<script src="app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const auth = requireAuth();
+    if (!auth) return;
+    setHeaderUserInfo();
+    updateNavigationRole();
+
+    const tableBody = document.getElementById('product-list');
+    const searchInput = document.getElementById('search-product');
+
+    async function renderInventory(search = '') {
+      let products = await apiFetchInventory();
+      if (search) {
+        products = products.filter(p => p.nombre.toLowerCase().includes(search.toLowerCase()) ||
+                                        p.marca?.toLowerCase().includes(search.toLowerCase()) ||
+                                        p.categoria?.toLowerCase().includes(search.toLowerCase()));
+      }
+      tableBody.innerHTML = '';
+      products.forEach(product => {
+        const row = document.createElement('tr');
+        row.className = 'border-t border-surface-container-high';
+        row.innerHTML = `
+          <td class="p-4">${product.nombre}</td>
+          <td class="p-4">${product.stock != null ? product.stock : 100}</td>
+          <td class="p-4">$${product.precio.toFixed(2)}</td>
+          <td class="p-4">
+            <button class="edit-product text-primary mr-2" data-id="${product.id_producto}">Editar</button>
+            <button class="delete-product text-error" data-id="${product.id_producto}">Eliminar</button>
+          </td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    await renderInventory();
+
+    async function loadStats() {
+      try {
+        const stats = await apiRequest('/inventory/stats', { method: 'GET' });
+        document.getElementById('total-productos').textContent = stats.total;
+        document.getElementById('bajos-stock').textContent = stats.bajos_stock;
+        document.getElementById('valor-total').textContent = `$${stats.valor_total.toFixed(2)}`;
+      } catch (err) {
+        console.error('Error cargando estadísticas:', err);
+      }
+    }
+
+    await loadStats();
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      renderInventory(query);
+    });
+
+    // Event listeners para editar y eliminar
+    document.addEventListener('click', async (e) => {
+      if (e.target.classList.contains('edit-product')) {
+        const id = e.target.dataset.id;
+        const product = (await apiFetchInventory()).find(p => p.id_producto == id);
+        if (product) {
+          showEditModal(product);
+        }
+      } else if (e.target.classList.contains('delete-product')) {
+        const id = e.target.dataset.id;
+        if (confirm('¿Estás seguro de eliminar este producto?')) {
+          try {
+            await apiRequest(`/inventory/${id}`, { method: 'DELETE' });
+            renderInventory();
+            loadStats();
+          } catch (err) {
+            alert('Error eliminando producto');
+          }
+        }
+      }
+    });
+
+    document.getElementById('add-product').addEventListener('click', () => {
+      // Mostrar modal para agregar producto
+      const modal = document.createElement('div');
+      modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50';
+      modal.innerHTML = `
+        <div class="bg-surface-container-lowest p-8 rounded-lg w-full max-w-md">
+          <h3 class="font-headline font-bold text-xl mb-6">Agregar Producto</h3>
+          <form id="add-product-form" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-2">Nombre</label>
+              <input name="nombre" type="text" required class="w-full bg-surface-container px-4 py-3 rounded-lg">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Marca</label>
+              <input name="marca" type="text" class="w-full bg-surface-container px-4 py-3 rounded-lg">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Categoría</label>
+              <input name="categoria" type="text" class="w-full bg-surface-container px-4 py-3 rounded-lg">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Precio</label>
+              <input name="precio" type="number" step="0.01" required class="w-full bg-surface-container px-4 py-3 rounded-lg">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Stock</label>
+              <input name="stock" type="number" required class="w-full bg-surface-container px-4 py-3 rounded-lg" value="100">
+            </div>
+            <div class="flex gap-4 mt-6">
+              <button type="button" id="cancel-add" class="flex-1 px-4 py-3 border border-outline-variant rounded-lg">Cancelar</button>
+              <button type="submit" class="flex-1 signature-gradient text-on-primary px-4 py-3 rounded-lg">Agregar</button>
+            </div>
+          </form>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      document.getElementById('cancel-add').addEventListener('click', () => modal.remove());
+      document.getElementById('add-product-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const product = {
+          nombre: formData.get('nombre'),
+          marca: formData.get('marca'),
+          categoria: formData.get('categoria'),
+          precio: parseFloat(formData.get('precio')),
+          stock: parseInt(formData.get('stock'))
+        };
+        try {
+          await apiRequest('/inventory', { method: 'POST', body: product });
+          modal.remove();
+          renderInventory();
+          loadStats();
+        } catch (err) {
+          alert('Error al agregar producto');
+        }
+      });
+    });
+
+    function showEditModal(product) {
+      const modal = document.createElement('div');
+      modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50';
+      modal.innerHTML = `
+        <div class="bg-surface-container-lowest p-8 rounded-lg w-full max-w-md">
+          <h3 class="font-headline font-bold text-xl mb-6">Editar Producto</h3>
+          <form id="edit-product-form" class="space-y-4">
+            <input type="hidden" name="id" value="${product.id_producto}">
+            <div>
+              <label class="block text-sm font-medium mb-2">Nombre</label>
+              <input name="nombre" type="text" required class="w-full bg-surface-container px-4 py-3 rounded-lg" value="${product.nombre}">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Marca</label>
+              <input name="marca" type="text" class="w-full bg-surface-container px-4 py-3 rounded-lg" value="${product.marca || ''}">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Categoría</label>
+              <input name="categoria" type="text" class="w-full bg-surface-container px-4 py-3 rounded-lg" value="${product.categoria || ''}">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Precio</label>
+              <input name="precio" type="number" step="0.01" required class="w-full bg-surface-container px-4 py-3 rounded-lg" value="${product.precio}">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Stock</label>
+              <input name="stock" type="number" required class="w-full bg-surface-container px-4 py-3 rounded-lg" value="${product.stock != null ? product.stock : 100}">
+            </div>
+            <div class="flex gap-4 mt-6">
+              <button type="button" id="cancel-edit" class="flex-1 px-4 py-3 border border-outline-variant rounded-lg">Cancelar</button>
+              <button type="submit" class="flex-1 signature-gradient text-on-primary px-4 py-3 rounded-lg">Actualizar</button>
+            </div>
+          </form>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      document.getElementById('cancel-edit').addEventListener('click', () => modal.remove());
+      document.getElementById('edit-product-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const updatedProduct = {
+          nombre: formData.get('nombre'),
+          marca: formData.get('marca'),
+          categoria: formData.get('categoria'),
+          precio: parseFloat(formData.get('precio')),
+          stock: parseInt(formData.get('stock'))
+        };
+        try {
+          await apiRequest(`/inventory/${formData.get('id')}`, { method: 'PUT', body: updatedProduct });
+          modal.remove();
+          renderInventory();
+          loadStats();
+        } catch (err) {
+          alert('Error actualizando producto');
+        }
+      });
+    }
+  });
+</script>
+</body></html>

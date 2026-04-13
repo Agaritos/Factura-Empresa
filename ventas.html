@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#ebe0e0",
+            "on-surface": "#1b1c1c",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#f2f0f0",
+            "primary-fixed-dim": "#ebbbbb",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#724d4e",
+            "surface-variant": "#e4e2e2",
+            "surface-container-low": "#f5f3f3",
+            "primary-fixed": "#ffdad9",
+            "secondary-fixed-dim": "#cec4c4",
+            "on-tertiary-fixed-variant": "#5c3f40",
+            "surface-container-high": "#eae8e7",
+            "on-error-container": "#93000a",
+            "primary-container": "#f2c1c1",
+            "on-secondary-container": "#6a6363",
+            "inverse-surface": "#303030",
+            "tertiary-fixed-dim": "#e5bdbd",
+            "surface-bright": "#fbf9f8",
+            "surface-container-highest": "#e4e2e2",
+            "on-background": "#1b1c1c",
+            "outline": "#827473",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#ffdad9",
+            "error": "#ba1a1a",
+            "secondary": "#645d5d",
+            "background": "#fbf9f8",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#4c4546",
+            "surface": "#fbf9f8",
+            "primary": "#7a5555",
+            "surface-tint": "#7a5555",
+            "secondary-container": "#ebe0e0",
+            "tertiary-container": "#ecc3c3",
+            "on-tertiary-fixed": "#2c1516",
+            "on-surface-variant": "#504444",
+            "on-tertiary-container": "#6d4f4f",
+            "surface-dim": "#dbd9d9",
+            "on-primary-fixed": "#2f1315",
+            "on-secondary-fixed": "#1f1a1b",
+            "inverse-primary": "#ebbbbb",
+            "tertiary": "#765757",
+            "surface-container": "#efeded",
+            "outline-variant": "#d4c2c2",
+            "on-primary-fixed-variant": "#603e3e"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans", "sans-serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .signature-gradient {
+      background: linear-gradient(135deg, #7a5555 0%, #f2c1c1 100%);
+    }
+    .glass-nav {
+      background: rgba(251, 249, 248, 0.8);
+      backdrop-filter: blur(20px);
+    }
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: #fbf9f8;
+      color: #1b1c1c;
+    }
+    h1, h2, h3, .masthead {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+  <title>Ventas - Velvet Petal</title>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="glass-nav sticky top-0 z-50 px-8 h-20 flex items-center justify-between border-b border-surface-container-high">
+  <div class="flex items-center gap-4">
+    <span class="text-primary font-headline font-extrabold text-2xl tracking-tight">SFRV-PB</span>
+  </div>
+  <div class="flex items-center gap-6">
+    <div class="h-10 w-10 rounded-full overflow-hidden border border-outline-variant/20">
+      <img alt="Perfil de Usuario" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP8TuqfSYbY-SF7iBpHKTEDee2rZvrrVV6qf28m_iPqVsFWYFS7aCEqvDWJxrcQPKc5LAduC3P10UNdh8UOAcbnKVvFbX8x0yGLi5piWzLH527C6PV7UZh-nuGVEGxrW7YDrc7SOWwwwamuKHbJQl2twmMlgrCCB1WgbODED4cuVytZphSRciHfWKk42wH8x4a-PaS79Jei31vpJraXAX4vSeIdwibutgVYDTP10AAwmZI8xvgzf5gL0BdhscY8M-hJV81mL44HNus"/>
+    </div>
+    <div class="flex flex-col items-end gap-1">
+      <p id="header-user" class="text-sm font-bold text-on-surface leading-none">Cargando...</p>
+      <p id="header-role" class="text-[10px] text-on-surface-variant uppercase tracking-widest">Cargando...</p>
+    </div>
+    <button onclick="logout()" class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors" title="Cerrar sesión">
+      <span class="material-symbols-outlined">logout</span>
+    </button>
+  </div>
+</header>
+
+<div class="flex flex-1 overflow-hidden">
+  <!-- Side Navigation Bar -->
+  <aside class="w-64 bg-surface-container border-r border-surface-container-high flex flex-col py-8 px-4">
+    <div class="mb-10 px-4">
+      <h2 class="font-headline font-bold text-xl text-primary">Velvet Petal</h2>
+      <p class="text-xs text-on-surface-variant font-medium tracking-wide">Sistema de Facturación</p>
+    </div>
+    <nav class="flex-1 space-y-2">
+      <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors" href="inicioo.html">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-label">Inicio</span>
+      </a>
+      <a class="flex items-center gap-4 px-4 py-3 rounded-xl bg-surface-container-highest text-primary font-semibold relative" href="ventas.html">
+        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-r-full"></div>
+        <span class="material-symbols-outlined">point_of_sale</span>
+        <span class="font-label">Ventas</span>
+      </a>
+      <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors" href="Inventario.html">
+        <span class="material-symbols-outlined">inventory_2</span>
+        <span class="font-label">Productos</span>
+      </a>
+      <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors" href="Historial.html">
+        <span class="material-symbols-outlined">history</span>
+        <span class="font-label">Historial</span>
+      </a>
+    </nav>
+    <div class="mt-auto px-4">
+      <div class="p-4 rounded-2xl bg-primary-container/30 border border-primary-container/50">
+        <p class="text-xs font-bold text-primary uppercase tracking-widest mb-1">Soporte</p>
+        <p class="text-sm text-on-primary-container">¿Necesitas ayuda con el sistema?</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="flex-1 overflow-y-auto p-10 bg-surface">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-between items-end mb-10">
+        <header>
+          <span class="label-md text-primary font-bold tracking-[0.1em] uppercase block mb-2">Punto de Venta</span>
+          <h1 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface">Nueva Venta</h1>
+        </header>
+        <div class="flex gap-4">
+          <button id="clear-sale" class="px-6 py-2 rounded-full border border-outline/20 text-primary font-semibold hover:bg-surface-container-low transition-colors">
+            Limpiar Venta
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-10 items-start">
+        <!-- Product Selection Section -->
+        <section class="col-span-8 space-y-8">
+          <!-- Search & Filters -->
+          <div class="flex gap-4 items-center">
+            <div class="relative flex-1">
+              <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+              <input id="search-products" class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest rounded-xl border-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-primary transition-all text-on-surface" placeholder="Buscar productos por nombre, código o categoría..." type="text"/>
+            </div>
+            <button class="p-4 bg-surface-container-lowest rounded-xl ring-1 ring-outline-variant/20 text-on-surface-variant hover:text-primary transition-colors">
+              <span class="material-symbols-outlined">filter_list</span>
+            </button>
+          </div>
+
+          <!-- Product Grid -->
+          <div id="products-grid" class="grid grid-cols-3 gap-6">
+            <!-- Product 1 -->
+            <div class="group cursor-pointer">
+              <div class="aspect-[4/5] overflow-hidden bg-surface-container relative mb-4">
+                <img alt="Suero Revitalizante" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQC_o2umfvD1Z9B16zrZg3ahU9QjAiZeaylwF_9z4eLhp1fxXgjROUDnzFrXXvWRSnznxsyum0T2hxeMRllxnz8XD4qb0KJGcN09Wz9tqS6iPrBFXPeMhUd68us0NG3Q40YnFvwJLhkIFGui7p0Z_2X098qCYe_cWJ6x8tuX6VknhzD0UHE4OKPQBBQz6c0-2I4Sw1jwSgiDpidPDBPSYUWgE80UqpSy6OXYHFzSFouM-Ets2yXJnuS4-M7SoIJIVriBbBBWsC7E1A"/>
+                <div class="absolute bottom-4 left-4 bg-surface-container-lowest px-4 py-1 rounded-lg shadow-sm">
+                  <span class="text-sm font-bold text-primary">$45.00</span>
+                </div>
+                <button class="absolute top-4 right-4 h-10 w-10 rounded-full signature-gradient text-white opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center justify-center" data-product="1" data-name="Suero Revitalizante Peonía" data-price="45.00">
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+              <h3 class="font-headline font-bold text-lg leading-tight">Suero Revitalizante Peonía</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Cuidado Facial • 30ml</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="group cursor-pointer mt-12">
+              <div class="aspect-[4/5] overflow-hidden bg-surface-container relative mb-4">
+                <img alt="Labial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWDi518Ma99wM8cFlistwHUBn8_TMtjiNj4UzxG2PCxxCHEsCXHMDe4F2H8Oqv6IHw1OfiOM90P0V-c8vrC_E47wQ3XTUd0eLlt16QI09pjc5B1MoBe_bJ0D8x9eCbeWHlgKwuCsdP3KTJ_7Qh3TCSv4sCxNj-W04a4SNDXL7RmfV5jVLewyDgnzo87nRrJyL4E_Enb1ycXqh_6UU_3mrn369l9zho7PThY1tCQBa6RZpC0DW0MeWK60x2e1EfKPZKl6H-LHEfWyzS"/>
+                <div class="absolute bottom-4 left-4 bg-surface-container-lowest px-4 py-1 rounded-lg shadow-sm">
+                  <span class="text-sm font-bold text-primary">$28.00</span>
+                </div>
+                <button class="absolute top-4 right-4 h-10 w-10 rounded-full signature-gradient text-white opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center justify-center" data-product="2" data-name="Labial Terciopelo Rosa" data-price="28.00">
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+              <h3 class="font-headline font-bold text-lg leading-tight">Labial Terciopelo Rosa</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Maquillaje • Matte</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="group cursor-pointer">
+              <div class="aspect-[4/5] overflow-hidden bg-surface-container relative mb-4">
+                <img alt="Paleta de Sombras" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMg-aaNfsl7a3GCbEJmb6zX3nQp8c2aIsDA1gmERnN7GHBUnPlqfoKIBHz7gCoCamX09NrZD1o7GJCRQrn9DWRJu6MdLvS4LoII5nJi34hv1yr_VPi2kTmvOyCp1Q5vJEOal0A8dpxRUts8wtnp7jSMWdoGKBKtj128Gb_oXJA4eJRgpdQVTWHIzu38b3y1pAhrgFuJHPrsMmEsYcv7WxLZpDbim3exLCVeK_2xHY8Nm-2qJRJzlBo81Zu9kUCnPTWQxW5ML4zM-9l"/>
+                <div class="absolute bottom-4 left-4 bg-surface-container-lowest px-4 py-1 rounded-lg shadow-sm">
+                  <span class="text-sm font-bold text-primary">$62.00</span>
+                </div>
+                <button class="absolute top-4 right-4 h-10 w-10 rounded-full signature-gradient text-white opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center justify-center" data-product="3" data-name="Paleta Sombras Nude Silk" data-price="62.00">
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+              <h3 class="font-headline font-bold text-lg leading-tight">Paleta Sombras "Nude Silk"</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Maquillaje • 12 Tonos</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="group cursor-pointer">
+              <div class="aspect-[4/5] overflow-hidden bg-surface-container relative mb-4">
+                <img alt="Crema Hidratante" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFeXCWOhn5853QH1uH2NtCQI-bJv2PxDn01dK1yI2LHPLFDusEnaM9KGL6ME-p79xfikbpCicDgP_NYRfAj0oFjrrsdtvKxIzli2vI-sAtQUHWagjVureG34YdIOm4yjc2Mvwt83osH_nCIX434rNWFhAZuMgVTtnQ9PjEcmpmXoykwRPCWC96HvLzPzNBrw_BqYIrMKSM6erWT9I6dwvfPyL9jdLcmt_KxFhXQazavv0Wd_TxnQ-1QikH7KUZUkCG8-8apvl2lLqr"/>
+                <div class="absolute bottom-4 left-4 bg-surface-container-lowest px-4 py-1 rounded-lg shadow-sm">
+                  <span class="text-sm font-bold text-primary">$54.00</span>
+                </div>
+                <button class="absolute top-4 right-4 h-10 w-10 rounded-full signature-gradient text-white opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center justify-center" data-product="4" data-name="Crema Hidratación Profunda" data-price="54.00">
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+              <h3 class="font-headline font-bold text-lg leading-tight">Crema Hidratación Profunda</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Cuidado Facial • 50g</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="group cursor-pointer mt-[-3rem]">
+              <div class="aspect-[4/5] overflow-hidden bg-surface-container relative mb-4">
+                <img alt="Serum Ojos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMy4zoA9qc8L5npXNt6P0TY2gW1DpjsQTL-oJ4iacj0-N1ytPsoCGWdk5ZDgaIR_96akKAn35UgD90QE3JNkD_svD5WZ4S-d6CGpeY5EyuE4o4J_OKgqEr0Sbeg0wZxpiVN7ewyieQlel-b9Th5y79EDwCgIy-74ClsbBfsLAiMy6runXcGqeASAW9ZPPSD6iGnWuJtTYVaq8AcvSzVq5e0N8y_DVtVLS3m8bQ2r9WWw7KUNdroBcvHZ0POyFS_NDHbgxvVsUxFj1o"/>
+                <div class="absolute bottom-4 left-4 bg-surface-container-lowest px-4 py-1 rounded-lg shadow-sm">
+                  <span class="text-sm font-bold text-primary">$39.00</span>
+                </div>
+                <button class="absolute top-4 right-4 h-10 w-10 rounded-full signature-gradient text-white opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center justify-center" data-product="5" data-name="Contorno Ojos Iluminador" data-price="39.00">
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+              <h3 class="font-headline font-bold text-lg leading-tight">Contorno Ojos Iluminador</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Cuidado Facial • 15ml</p>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="group cursor-pointer">
+              <div class="aspect-[4/5] overflow-hidden bg-surface-container relative mb-4">
+                <img alt="Perfume" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdSCTx_KMs1Q1FnlU2iHxTSk4VvQV5WA82qGbytLYArIssx3fuTUEDYk3GlvW4DVx1qWaO2RDDQZcVTqKqnWgWTmTgj_bTN0AxDftq3IUPgRd5bHdxVDDQbFwBM8uZCxeo7z75UrnN8LHt5qNlVTPGwYDAOglzAa5xFQaJmR3lKr7HBbk8Jb4DP45sjSVS7meGYncFWdwEm4iHAt5dc2RFLh8A0L-wDNI_jPxDd4sCKvynJye0qhZTBaMRKij_Y_iKKiPruUr_Zp5m"/>
+                <div class="absolute bottom-4 left-4 bg-surface-container-lowest px-4 py-1 rounded-lg shadow-sm">
+                  <span class="text-sm font-bold text-primary">$85.00</span>
+                </div>
+                <button class="absolute top-4 right-4 h-10 w-10 rounded-full signature-gradient text-white opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center justify-center" data-product="6" data-name="Fragancia Bloom Eternal" data-price="85.00">
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+              <h3 class="font-headline font-bold text-lg leading-tight">Fragancia "Bloom Eternal"</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Perfumería • 100ml</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cart / Checkout Section -->
+        <section class="col-span-4 sticky top-28">
+          <div class="bg-surface-container-lowest rounded-lg p-8 shadow-sm border border-surface-container-high">
+            <h2 class="font-headline font-bold text-2xl mb-6 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary">shopping_bag</span>
+              Carrito
+            </h2>
+
+            <!-- Cart Items List -->
+            <div id="cart-items" class="space-y-6 mb-10"></div>
+
+            <!-- Summary -->
+            <div class="border-t border-surface-container-high pt-6 space-y-3">
+              <div class="flex justify-between text-on-surface-variant">
+                <span class="text-sm font-medium">Subtotal</span>
+                <span id="subtotal" class="text-sm font-bold">$0.00</span>
+              </div>
+              <div class="flex justify-between text-on-surface-variant">
+                <span class="text-sm font-medium">Impuestos (15%)</span>
+                <span id="tax" class="text-sm font-bold">$0.00</span>
+              </div>
+              <div class="flex justify-between items-center pt-4 border-t border-surface-container-high mt-4">
+                <span class="font-headline font-bold text-lg">Total</span>
+                <span id="total" class="font-headline font-extrabold text-2xl text-primary">$0.00</span>
+              </div>
+            </div>
+
+            <!-- Payment & Action -->
+            <div class="mt-10 space-y-4">
+              <div>
+                <label class="label-md text-on-surface-variant font-bold tracking-wider block mb-3 uppercase">Método de Pago</label>
+                <div class="grid grid-cols-3 gap-3">
+                  <button id="payment-efectivo" class="payment-method p-3 flex flex-col items-center gap-1 rounded-xl border border-primary bg-primary-container/20 text-primary">
+                    <span class="material-symbols-outlined">payments</span>
+                    <span class="text-[10px] font-bold uppercase">Efectivo</span>
+                  </button>
+                  <button id="payment-tarjeta" class="payment-method p-3 flex flex-col items-center gap-1 rounded-xl border border-outline-variant/30 text-on-surface-variant hover:border-primary/50 transition-colors">
+                    <span class="material-symbols-outlined">credit_card</span>
+                    <span class="text-[10px] font-bold uppercase">Tarjeta</span>
+                  </button>
+                  <button id="payment-transfer" class="payment-method p-3 flex flex-col items-center gap-1 rounded-xl border border-outline-variant/30 text-on-surface-variant hover:border-primary/50 transition-colors">
+                    <span class="material-symbols-outlined">account_balance_wallet</span>
+                    <span class="text-[10px] font-bold uppercase">Transfer</span>
+                  </button>
+                </div>
+              </div>
+              <div class="relative pt-4">
+                <label class="label-md text-on-surface-variant font-bold tracking-wider block mb-2 uppercase">Cliente</label>
+                <div class="flex gap-2">
+                  <input id="client-input" class="flex-1 bg-surface-container-low border-none rounded-lg text-sm px-4 py-3 focus:ring-1 focus:ring-primary" placeholder="CF - Consumidor Final" type="text"/>
+                  <button id="add-client" class="p-3 bg-surface-container-high rounded-lg text-primary">
+                    <span class="material-symbols-outlined text-base">person_add</span>
+                  </button>
+                </div>
+              </div>
+              <button id="generate-invoice" class="w-full signature-gradient text-white py-5 rounded-full font-headline font-bold text-lg shadow-xl shadow-primary-container/40 hover:scale-[1.02] transition-transform flex items-center justify-center gap-3 mt-6">
+                Generar Factura
+                <span class="material-symbols-outlined">description</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Invoice Modal -->
+<div id="invoice-modal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
+  <div class="bg-surface max-w-2xl w-full rounded-lg shadow-xl max-h-[90vh] overflow-y-auto">
+    <div class="p-8">
+      <div class="flex justify-between items-start mb-8">
+        <h2 id="invoice-number" class="font-headline font-bold text-2xl text-on-surface">Factura #</h2>
+        <button id="close-modal" class="text-on-surface-variant hover:text-primary cursor-pointer">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="space-y-6">
+        <div class="border-b border-surface-container-high pb-4">
+          <p class="text-on-surface-variant text-sm">Fecha: <span id="invoice-date"></span></p>
+          <p class="text-on-surface-variant text-sm">Cliente: <span id="invoice-client">CF - Consumidor Final</span></p>
+          <p class="text-on-surface-variant text-sm">Método de Pago: <span id="invoice-payment">Efectivo</span></p>
+        </div>
+        <div id="invoice-items" class="space-y-4"></div>
+        <div class="border-t border-surface-container-high pt-4 space-y-2">
+          <div class="flex justify-between text-on-surface-variant">
+            <span>Subtotal</span>
+            <span id="invoice-subtotal">$0.00</span>
+          </div>
+          <div class="flex justify-between text-on-surface-variant">
+            <span>Impuestos (15%)</span>
+            <span id="invoice-tax">$0.00</span>
+          </div>
+          <div class="flex justify-between font-headline font-bold text-lg">
+            <span>Total</span>
+            <span id="invoice-total">$0.00</span>
+          </div>
+        </div>
+        <div class="mt-8 flex gap-4">
+          <button id="print-invoice" class="px-6 py-3 bg-primary text-on-primary rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined">print</span>
+            Imprimir
+          </button>
+          <button id="download-invoice" class="px-6 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined">download</span>
+            Descargar PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>
+// Initialize auth
+requireAuth();
+setHeaderUserInfo();
+updateNavigationRole();
+
+let cart = [];
+let selectedPayment = 'Efectivo';
+let client = 'CF - Consumidor Final';
+let invoiceCounter = 8843; // Starting invoice number
+
+async function loadProducts(search = '') {
+  const products = await apiFetchInventory();
+  const filtered = search ? products.filter(p => 
+    p.nombre.toLowerCase().includes(search.toLowerCase()) ||
+    p.marca?.toLowerCase().includes(search.toLowerCase()) ||
+    p.categoria?.toLowerCase().includes(search.toLowerCase())
+  ) : products;
+
+  const imageMap = {
+    'Labial Mate': 'labialmate.png',
+    'Base Liquida': 'base.jpg',
+    'Rimel': 'rimel.webp',
+    'Crema Facial': 'cremafacial.jpg',
+    'Perfume Floral': 'perfumefloral.jpg',
+    'Esmalte Rojo': 'esmalterojo.webp',
+    'Shampoo Reparador': 'shampoo.webp',
+    'Acondicionador': 'sedal.avif',
+    'Protector Solar': 'cremasolar.jpg',
+    'Gel Fijador': 'gelfijador.webp'
+  };
+
+  const productsContainer = document.getElementById('products-grid');
+  productsContainer.innerHTML = '';
+  filtered.forEach((product, index) => {
+    const image = imageMap[product.nombre] || 'default.jpg';
+    const productDiv = document.createElement('div');
+    productDiv.className = 'group cursor-pointer';
+    if (index >= 5) productDiv.classList.add('mt-[-3rem]');
+    productDiv.innerHTML = `
+      <div class="aspect-[4/5] overflow-hidden bg-surface-container relative mb-4">
+        <img alt="${product.nombre}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="Imagenes/${image}">
+        <div class="absolute bottom-4 left-4 bg-surface-container-lowest px-4 py-1 rounded-lg shadow-sm">
+          <span class="text-sm font-bold text-primary">$${product.precio.toFixed(2)}</span>
+        </div>
+        <button class="absolute top-4 right-4 h-10 w-10 rounded-full signature-gradient text-white opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center justify-center add-to-cart" data-product="${product.id_producto}" data-name="${product.nombre}" data-price="${product.precio}">
+          <span class="material-symbols-outlined">add</span>
+        </button>
+      </div>
+      <h3 class="font-headline font-bold text-lg leading-tight">${product.nombre}</h3>
+      <p class="text-sm text-on-surface-variant mt-1">${product.categoria || 'Producto'} • ${product.marca || 'Genérico'}</p>
+    `;
+    productsContainer.appendChild(productDiv);
+  });
+}
+
+loadProducts();
+
+// Búsqueda de productos
+document.getElementById('search-products').addEventListener('input', (e) => {
+  loadProducts(e.target.value);
+});
+
+function updateCart() {
+  const cartContainer = document.getElementById('cart-items');
+  cartContainer.innerHTML = '';
+  let subtotal = 0;
+  
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.quantity;
+    subtotal += itemTotal;
+    
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'flex gap-4 group';
+    itemDiv.innerHTML = `
+      <div class="h-16 w-16 bg-surface-container shrink-0 overflow-hidden rounded">
+        <img alt="Item" src="https://via.placeholder.com/64" />
+      </div>
+      <div class="flex-1">
+        <div class="flex justify-between items-start">
+          <h4 class="font-bold text-sm leading-tight pr-4">${item.name}</h4>
+          <button class="remove-item text-on-surface-variant/40 hover:text-error transition-colors" data-index="${index}">
+            <span class="material-symbols-outlined text-base">close</span>
+          </button>
+        </div>
+        <div class="flex justify-between items-center mt-2">
+          <div class="flex items-center gap-3">
+            <button class="decrease-qty h-6 w-6 rounded-md bg-surface-container flex items-center justify-center text-on-surface-variant text-xs" data-index="${index}">−</button>
+            <span class="text-sm font-bold">${item.quantity}</span>
+            <button class="increase-qty h-6 w-6 rounded-md bg-surface-container flex items-center justify-center text-on-surface-variant text-xs" data-index="${index}">+</button>
+          </div>
+          <span class="text-sm font-bold text-on-surface">$${itemTotal.toFixed(2)}</span>
+        </div>
+      </div>
+    `;
+    cartContainer.appendChild(itemDiv);
+  });
+  
+  const tax = subtotal * 0.15;
+  const total = subtotal + tax;
+  document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+  document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+  document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+}
+
+// Event delegation for product and cart actions
+document.addEventListener('click', (e) => {
+  // Add product to cart
+  if (e.target.closest('.add-to-cart')) {
+    const button = e.target.closest('.add-to-cart');
+    const product = {
+      id: button.dataset.product,
+      name: button.dataset.name,
+      price: parseFloat(button.dataset.price),
+      quantity: 1
+    };
+    const existing = cart.find(item => item.id === product.id);
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push(product);
+    }
+    updateCart();
+  }
+  
+  // Remove item from cart
+  if (e.target.closest('.remove-item')) {
+    const index = e.target.closest('.remove-item').dataset.index;
+    cart.splice(index, 1);
+    updateCart();
+  }
+  
+  // Increase quantity
+  if (e.target.closest('.increase-qty')) {
+    const index = e.target.closest('.increase-qty').dataset.index;
+    cart[index].quantity++;
+    updateCart();
+  }
+  
+  // Decrease quantity
+  if (e.target.closest('.decrease-qty')) {
+    const index = e.target.closest('.decrease-qty').dataset.index;
+    if (cart[index].quantity > 1) {
+      cart[index].quantity--;
+    } else {
+      cart.splice(index, 1);
+    }
+    updateCart();
+  }
+  
+  // Payment method selection
+  if (e.target.closest('.payment-method')) {
+    document.querySelectorAll('.payment-method').forEach(btn => {
+      btn.classList.remove('border-primary', 'bg-primary-container/20', 'text-primary');
+      btn.classList.add('border-outline-variant/30', 'text-on-surface-variant');
+    });
+    const selected = e.target.closest('.payment-method');
+    selected.classList.add('border-primary', 'bg-primary-container/20', 'text-primary');
+    selected.classList.remove('border-outline-variant/30', 'text-on-surface-variant');
+    const methodText = selected.querySelector('span:last-child')?.textContent || 'Efectivo';
+    selectedPayment = methodText.trim();
+  }
+});
+
+// Add client name
+document.getElementById('add-client').addEventListener('click', () => {
+  const input = document.getElementById('client-input');
+  if (input.value.trim()) {
+    client = input.value.trim();
+  }
+});
+
+// Clear sale
+document.getElementById('clear-sale').addEventListener('click', () => {
+  cart = [];
+  updateCart();
+});
+
+// Generate invoice
+document.getElementById('generate-invoice').addEventListener('click', async () => {
+  if (cart.length === 0) {
+    alert('El carrito está vacío');
+    return;
+  }
+  
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const tax = subtotal * 0.15;
+  const total = subtotal + tax;
+  
+  try {
+    const response = await apiRequest('/api/sales', {
+      method: 'POST',
+      body: { items: cart, total, payment: selectedPayment, client }
+    });
+    invoiceCounter = response.id_venta;
+  } catch (err) {
+    console.error('Error guardando venta:', err);
+    // Continuar con modal aunque falle guardar
+  }
+  
+  const modal = document.getElementById('invoice-modal');
+  document.getElementById('invoice-number').textContent = `Factura #${invoiceCounter}`;
+  document.getElementById('invoice-date').textContent = new Date().toLocaleDateString('es-ES');
+  document.getElementById('invoice-client').textContent = client;
+  document.getElementById('invoice-payment').textContent = selectedPayment;
+  
+  const itemsContainer = document.getElementById('invoice-items');
+  itemsContainer.innerHTML = '';
+  
+  cart.forEach(item => {
+    const itemTotal = item.price * item.quantity;
+    
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'flex justify-between py-2 border-b border-surface-container-high last:border-0';
+    itemDiv.innerHTML = `
+      <span>${item.name} x${item.quantity}</span>
+      <span>$${itemTotal.toFixed(2)}</span>
+    `;
+    itemsContainer.appendChild(itemDiv);
+  });
+  
+  document.getElementById('invoice-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+  document.getElementById('invoice-tax').textContent = `$${tax.toFixed(2)}`;
+  document.getElementById('invoice-total').textContent = `$${total.toFixed(2)}`;
+  
+  modal.classList.remove('hidden');
+  cart = []; // Limpiar carrito después de generar
+  updateCart();
+});
+
+// Close modal
+document.getElementById('close-modal').addEventListener('click', () => {
+  document.getElementById('invoice-modal').classList.add('hidden');
+});
+
+// Print invoice
+document.getElementById('print-invoice').addEventListener('click', () => {
+  window.print();
+});
+
+// Download invoice (placeholder)
+document.getElementById('download-invoice').addEventListener('click', () => {
+  alert('Funcionalidad de descarga disponible próximamente. Usa Imprimir para guardar como PDF.');
+});
+</script>
+</body>
+</html>

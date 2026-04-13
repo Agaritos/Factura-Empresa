@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#ebe0e0",
+              "on-surface": "#1b1c1c",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#f2f0f0",
+              "primary-fixed-dim": "#ebbbbb",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#724d4e",
+              "surface-variant": "#e4e2e2",
+              "surface-container-low": "#f5f3f3",
+              "primary-fixed": "#ffdad9",
+              "secondary-fixed-dim": "#cec4c4",
+              "on-tertiary-fixed-variant": "#5c3f40",
+              "surface-container-high": "#eae8e7",
+              "on-error-container": "#93000a",
+              "primary-container": "#f2c1c1",
+              "on-secondary-container": "#6a6363",
+              "inverse-surface": "#303030",
+              "tertiary-fixed-dim": "#e5bdbd",
+              "surface-bright": "#fbf9f8",
+              "surface-container-highest": "#e4e2e2",
+              "on-background": "#1b1c1c",
+              "outline": "#827473",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#ffdad9",
+              "error": "#ba1a1a",
+              "secondary": "#645d5d",
+              "background": "#fbf9f8",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#4c4546",
+              "surface": "#fbf9f8",
+              "primary": "#7a5555",
+              "surface-tint": "#7a5555",
+              "secondary-container": "#ebe0e0",
+              "tertiary-container": "#ecc3c3",
+              "on-tertiary-fixed": "#2c1516",
+              "on-surface-variant": "#504444",
+              "on-tertiary-container": "#6d4f4f",
+              "surface-dim": "#dbd9d9",
+              "on-primary-fixed": "#2f1315",
+              "on-secondary-fixed": "#1f1a1b",
+              "inverse-primary": "#ebbbbb",
+              "tertiary": "#765757",
+              "surface-container": "#efeded",
+              "outline-variant": "#d4c2c2",
+              "on-primary-fixed-variant": "#603e3e"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Manrope', sans-serif; }
+      .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(251, 249, 248, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .signature-gradient {
+        background: linear-gradient(135deg, #7a5555 0%, #f2c1c1 100%);
+      }
+      .signature-gradient:hover {
+        opacity: 0.9;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="w-72 border-r border-outline/10 h-screen sticky top-0 flex flex-col bg-surface-container">
+<div class="p-8">
+<h2 class="font-headline text-headline-lg text-primary font-bold tracking-tight">Velvet Petal</h2>
+<p class="text-on-surface-variant text-sm font-label uppercase tracking-widest mt-1">Sistema de Facturación</p>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-8">
+<a class="flex items-center gap-4 px-6 py-4 rounded-full bg-surface-container-lowest text-primary shadow-sm" href="inicioo.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-medium">Inicio</span>
+<div class="ml-auto w-1 h-6 bg-primary rounded-full"></div>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors" href="ventas.html">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span class="font-medium">Ventas</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors" href="Inventario.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-medium">Productos</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors" href="Historial.html">
+<span class="material-symbols-outlined">history</span>
+<span class="font-medium">Historial</span>
+</a>
+</nav>
+<div class="p-8 mt-auto">
+<div class="p-6 rounded-lg bg-primary-container/30 border border-primary-container/50">
+<p class="text-on-primary-container text-xs font-bold uppercase tracking-wider">Soporte Premium</p>
+<p class="text-on-primary-container/80 text-sm mt-2">¿Necesitas ayuda con SFRV-PB?</p>
+<a href="mailto:soporte@velvetpetal.com" class="mt-4 text-xs font-bold text-primary underline underline-offset-4">Contactar ahora</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="h-20 glass-nav border-b border-outline/5 px-10 flex items-center justify-between sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<h1 class="text-on-surface font-headline font-semibold text-xl">SFRV-PB</h1>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded-full uppercase tracking-tighter">Live Dashboard</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button id="dark-mode-toggle" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline/20"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right">
+<p id="header-user" class="text-sm font-bold text-on-surface leading-none">Cargando...</p>
+<p id="header-role" class="text-[10px] text-on-surface-variant uppercase tracking-widest mt-1">Cargando...</p>
+</div>
+<img alt="Perfil de Usuario" class="w-10 h-10 rounded-full object-cover ring-2 ring-primary/10" data-alt="Portrait of a smiling professional woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjnRPPhRdlDYRXMe0CBzrFQXcnPRd3ExqGlfhzef6z05GPhQzjeiQbqQwgG6hkhW1ESDLw2DQQeuaYjU_IX-B6bDOFarOLf7SR7Hf5TtjkD6F37V998AFxi5Jb4rPoALWIo915PwxN2dcDvavlkhnrQfhv0H4-CVwpKbp_4pnVnxdQuL0Jeoke43hl1ObwFoE0QlFYHcTPV-3zYPvX-L7BaZppk8IqgDxNdbPvoKAUkSfsbAgqUFASNNJMVc1UCBXIglY1O8D1aBy_"/>
+<button onclick="logout()" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors" title="Cerrar sesión">
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<section class="p-10 space-y-10">
+<!-- Hero Stats Bento Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Sales Today -->
+<div class="col-span-12 lg:col-span-5 bg-surface-container-lowest p-8 rounded-lg relative overflow-hidden group">
+<div class="relative z-10">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-[0.2em]">Ventas del día</span>
+<h3 id="sales-today-value" class="text-4xl font-headline font-bold text-on-surface mt-4 tracking-tight">$0.00</h3>
+<div class="flex items-center gap-2 mt-6 text-green-600">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span id="sales-trend" class="text-xs font-bold">Cargando datos...</span>
+</div>
+</div>
+<div class="absolute -right-10 -bottom-10 w-48 h-48 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="absolute top-8 right-8 text-primary/20">
+<span class="material-symbols-outlined style='font-size: 64px'">payments</span>
+</div>
+</div>
+<!-- Transactions Count -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 bg-primary text-on-primary p-8 rounded-lg signature-gradient flex flex-col justify-between">
+<div>
+<span class="font-label text-xs uppercase tracking-[0.2em] opacity-80">Transacciones</span>
+<h3 id="transactions-count" class="text-4xl font-headline font-bold mt-4 tracking-tight">0</h3>
+</div>
+<p id="transactions-text" class="text-xs mt-6 opacity-80">Cargando información de ventas</p>
+</div>
+<!-- Average Ticket -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container-high p-8 rounded-lg border border-outline/5 flex flex-col justify-between">
+<div>
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-[0.2em]">Ticket Promedio</span>
+<h3 id="ticket-average" class="text-3xl font-headline font-bold text-on-surface mt-4">$0.00</h3>
+</div>
+<div class="mt-6 flex -space-x-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed border-2 border-surface-container-high"></div>
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed border-2 border-surface-container-high"></div>
+<div class="w-8 h-8 rounded-full bg-secondary-fixed border-2 border-surface-container-high"></div>
+<div class="w-8 h-8 rounded-full bg-outline-variant border-2 border-surface-container-high flex items-center justify-center text-[10px] font-bold">+8</div>
+</div>
+</div>
+</div>
+<!-- Main Layout: Recent Sales & Top Products -->
+<div class="grid grid-cols-12 gap-10">
+<!-- Recent Sales List -->
+<div class="col-span-12 xl:col-span-8">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline text-2xl font-bold text-on-surface">Ventas Recientes</h2>
+<a href="Historial.html" class="text-primary font-bold text-sm underline underline-offset-8">Ver todo el historial</a>
+</div>
+<div id="recent-sales-list" class="space-y-4">
+<div class="text-on-surface-variant text-sm">Cargando ventas recientes...</div>
+</div>
+</div>
+<!-- Featured Section / Action Panel -->
+<div class="col-span-12 xl:col-span-4 space-y-6">
+<div class="bg-surface-container p-8 rounded-lg relative overflow-hidden">
+<h4 class="font-headline font-bold text-on-surface text-lg">Acciones Rápidas</h4>
+<div class="mt-8 grid grid-cols-2 gap-4">
+<a href="ventas.html" class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-lg hover:bg-primary hover:text-on-primary transition-all group">
+<span class="material-symbols-outlined mb-2 group-hover:scale-110 transition-transform">add_shopping_cart</span>
+<span class="text-xs font-bold uppercase tracking-widest">Nueva Venta</span>
+</a>
+<a href="#" class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-lg hover:bg-primary hover:text-on-primary transition-all group">
+<span class="material-symbols-outlined mb-2 group-hover:scale-110 transition-transform">person_add</span>
+<span class="text-xs font-bold uppercase tracking-widest">Cliente</span>
+</a>
+<a href="Historial.html" class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-lg hover:bg-primary hover:text-on-primary transition-all group">
+<span class="material-symbols-outlined mb-2 group-hover:scale-110 transition-transform">print</span>
+<span class="text-xs font-bold uppercase tracking-widest">Reporte</span>
+</a>
+<a href="Inventario.html" class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-lg hover:bg-primary hover:text-on-primary transition-all group">
+<span class="material-symbols-outlined mb-2 group-hover:scale-110 transition-transform">inventory</span>
+<span class="text-xs font-bold uppercase tracking-widest">Stock</span>
+</a>
+</div>
+</div>
+<!-- Editorial Style Product Highlight -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden border border-outline/5">
+<div class="relative h-48">
+<img alt="Product Highlight" class="w-full h-full object-cover" data-alt="Luxury organic skincare bottle on neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXUrzQ-vGD-fwNcFQcoylZyCRIxuMbJf3PWMFzIA3tEs4N3GbKWldjHQNDKRxRQiEleCZH_U_JDn2L0NZwDExvRdB9cBx-_ijke_Yr9xqbb5S0hwT2WnjXF3OVdo8TK_pgHpRvS-lqgaCcnbvD2fXmbD7GfENQ_PSbbI7MhKWgoPveJxFxMTHDmLxgAMDHVZl1gMmSceOyzMIOJJQsChqqz2gAgg2VvcSwBHWDeTg3hxPB4kW-qlD-UWv89VsfysZ_rMGX-v1zwVDk"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full uppercase tracking-widest">Más vendido</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-background px-4 py-2 rounded-lg shadow-lg">
+<p class="text-primary font-bold text-sm">$45.00</p>
+</div>
+</div>
+<div class="p-6">
+<h5 id="top-product-name" class="font-headline font-bold text-on-surface">Cargando producto</h5>
+<p id="top-product-description" class="text-on-surface-variant text-xs mt-2 leading-relaxed">Información de inventario disponible desde la base de datos.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Minimal Footer -->
+<footer class="mt-auto py-10 px-10 border-t border-outline/5 flex items-center justify-between text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant/60">
+<p>© 2024 Velvet Petal System - SFRV-PB v2.4.0</p>
+<div class="flex gap-8">
+<a class="hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="hover:text-primary transition-colors" href="#">Términos</a>
+<a class="hover:text-primary transition-colors" href="#">Soporte Tecnico</a>
+</div>
+</footer>
+</main>
+<script>
+document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+  document.documentElement.classList.toggle('dark');
+  const icon = this.querySelector('span');
+  icon.textContent = document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+});
+</script>
+<script src="app.js"></script>
+<script>
+  requireAuth();
+  const auth = getAuth();
+  if (auth) {
+    setHeaderUserInfo();
+    updateNavigationRole();
+    document.getElementById('header-role').textContent = auth.role;
+  }
+
+  async function loadInicioDashboard() {
+    try {
+      const [sales, products] = await Promise.all([
+        apiRequest('/api/sales', { method: 'GET' }),
+        apiFetchInventory()
+      ]);
+
+      const today = new Date().toISOString().slice(0, 10);
+      const salesToday = sales.filter(sale => sale.fecha?.slice(0, 10) === today);
+      const totalToday = salesToday.reduce((sum, sale) => sum + Number(sale.total), 0);
+      const countToday = salesToday.length;
+      const average = sales.length ? sales.reduce((sum, sale) => sum + Number(sale.total), 0) / sales.length : 0;
+
+      document.getElementById('sales-today-value').textContent = `$${totalToday.toFixed(2)}`;
+      document.getElementById('sales-trend').textContent = `${countToday} ventas hoy`;
+      document.getElementById('transactions-count').textContent = sales.length;
+      document.getElementById('transactions-text').textContent = `${sales.length} transacciones totales`;
+      document.getElementById('ticket-average').textContent = `$${average.toFixed(2)}`;
+
+      const recentSales = sales.slice(0, 3);
+      const recentSalesList = document.getElementById('recent-sales-list');
+      recentSalesList.innerHTML = '';
+      if (recentSales.length === 0) {
+        recentSalesList.innerHTML = '<div class="text-on-surface-variant text-sm">No hay ventas registradas aún.</div>';
+      } else {
+        recentSales.forEach(sale => {
+          const item = document.createElement('div');
+          item.className = 'group bg-surface-container-lowest p-6 rounded-lg transition-all hover:translate-x-2 border-l-4 border-transparent hover:border-primary flex items-center gap-6';
+          const status = sale.status || 'Completada';
+          const statusColor = status.toLowerCase() === 'pendiente' ? 'bg-amber-100 text-amber-700' : 'bg-green-100 text-green-700';
+          const dateText = sale.fecha ? new Date(sale.fecha).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' }) : 'Fecha no disponible';
+          item.innerHTML = `
+            <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">receipt_long</span>
+            </div>
+            <div class="flex-1">
+              <p class="text-on-surface font-bold">Venta #${sale.id_venta} - ${sale.usuario || 'Cliente'}</p>
+              <p class="text-on-surface-variant text-xs mt-1">${dateText} • ${sale.items || 0} artículos</p>
+            </div>
+            <div class="text-right">
+              <p class="text-on-surface font-headline font-bold">$${Number(sale.total).toFixed(2)}</p>
+              <span class="px-2 py-0.5 ${statusColor} text-[10px] font-bold rounded uppercase tracking-tighter">${status}</span>
+            </div>
+            <button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+            </button>
+          `;
+          recentSalesList.appendChild(item);
+        });
+      }
+
+      if (products.length > 0) {
+        const top = products[0];
+        document.getElementById('top-product-name').textContent = top.nombre;
+        document.getElementById('top-product-description').textContent = `${top.categoria || 'Categoría no definida'} • ${top.marca || 'Marca no definida'}`;
+      }
+    } catch (error) {
+      console.error('Error cargando dashboard:', error);
+    }
+  }
+
+  loadInicioDashboard();
+</script>
+</body></html>

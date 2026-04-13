@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <title>Iniciar Sesión - Velvet Petal</title>
+  <style>
+    body { font-family: 'Manrope', sans-serif; background: #f8f4f3; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-4 py-10">
+  <div class="max-w-md w-full bg-white rounded-[2rem] shadow-2xl overflow-hidden">
+    <div class="bg-[#7a5555] px-10 py-12 text-center text-white">
+      <p class="uppercase tracking-[0.3em] text-xs opacity-80">Velvet Petal</p>
+      <h1 class="mt-6 text-4xl font-bold">Iniciar Sesión</h1>
+      <p class="mt-3 text-sm text-[#f3d3d2]">Accede como Administrador o Usuario para continuar.</p>
+    </div>
+    <div class="p-8">
+      <form id="login-form" class="space-y-6">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Usuario</label>
+          <input id="username" class="w-full rounded-3xl border border-slate-200 px-4 py-3 text-sm focus:border-[#7a5555] focus:ring-[#7a5555]/30 outline-none" placeholder="Ingresa tu usuario" required />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Contraseña</label>
+          <input id="password" type="password" class="w-full rounded-3xl border border-slate-200 px-4 py-3 text-sm focus:border-[#7a5555] focus:ring-[#7a5555]/30 outline-none" placeholder="Ingresa tu contraseña" required />
+        </div>
+        <button type="submit" class="w-full py-3 rounded-full bg-[#7a5555] text-white font-bold hover:bg-[#624444] transition-colors">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    const form = document.getElementById('login-form');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      try {
+        await loginUser(username, password);
+        window.location.href = 'inicioo.html';
+      } catch (error) {
+        alert(error.message || 'No se pudo iniciar sesión');
+      }
+    });
+  </script>
+</body>
+</html>

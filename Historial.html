@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#ebe0e0",
+              "on-surface": "#1b1c1c",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#f2f0f0",
+              "primary-fixed-dim": "#ebbbbb",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#724d4e",
+              "surface-variant": "#e4e2e2",
+              "surface-container-low": "#f5f3f3",
+              "primary-fixed": "#ffdad9",
+              "secondary-fixed-dim": "#cec4c4",
+              "on-tertiary-fixed-variant": "#5c3f40",
+              "surface-container-high": "#eae8e7",
+              "on-error-container": "#93000a",
+              "primary-container": "#f2c1c1",
+              "on-secondary-container": "#6a6363",
+              "inverse-surface": "#303030",
+              "tertiary-fixed-dim": "#e5bdbd",
+              "surface-bright": "#fbf9f8",
+              "surface-container-highest": "#e4e2e2",
+              "on-background": "#1b1c1c",
+              "outline": "#827473",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#ffdad9",
+              "error": "#ba1a1a",
+              "secondary": "#645d5d",
+              "background": "#fbf9f8",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#4c4546",
+              "surface": "#fbf9f8",
+              "primary": "#7a5555",
+              "surface-tint": "#7a5555",
+              "secondary-container": "#ebe0e0",
+              "tertiary-container": "#ecc3c3",
+              "on-tertiary-fixed": "#2c1516",
+              "on-surface-variant": "#504444",
+              "on-tertiary-container": "#6d4f4f",
+              "surface-dim": "#dbd9d9",
+              "on-primary-fixed": "#2f1315",
+              "on-secondary-fixed": "#1f1a1b",
+              "inverse-primary": "#ebbbbb",
+              "tertiary": "#765757",
+              "surface-container": "#efeded",
+              "outline-variant": "#d4c2c2",
+              "on-primary-fixed-variant": "#603e3e"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #7a5555 0%, #f2c1c1 100%);
+        }
+        .glass-nav {
+            background-color: rgba(251, 249, 248, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 bg-surface-container border-r border-transparent flex flex-col fixed h-full z-30">
+<div class="p-8">
+<h1 class="font-headline text-headline-lg text-primary font-bold tracking-tight">Velvet Petal</h1>
+<p class="font-label text-xs tracking-widest text-on-secondary-fixed-variant opacity-70 mt-1">SISTEMA DE FACTURACIÓN</p>
+</div>
+<nav class="mt-8 px-4 flex-grow space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant" href="inicioo.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-medium">Inicio</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant" href="ventas.html">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span class="font-medium">Ventas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant" href="Inventario.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-medium">Productos</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-full bg-surface-container-lowest text-primary shadow-sm" href="Historial.html">
+<div class="w-1 h-6 bg-primary rounded-full absolute left-0"></div>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-bold">Historial</span>
+</a>
+</nav>
+<div class="p-8 border-t border-outline-variant/10">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Perfil de usuario en primer plano" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1JHHzWoSGp1BL_ALmi5FsPo0XrZb37uiarCRUsJIsxciuI6uXaUCfhkInYOrrIYu1n55hfBrOV_qftK7g-XxgqF9SGjRiPXsISnSz1M495xUVQUm3oWiUXfh2IuCglOormZjxU7MaKIrdOK0subK0XzH15_KNiFXjcdTdgik23SL0iaqB5CgQOLI4AWJk2cFrn4d03iFfIXYKTzYbCWyf_JNfGVtUlx4-_stMs8zUcHjxB2o-hkM03QFOAV0aXXTrYf-gm5jXlB_I"/>
+<div>
+<p class="text-sm font-bold leading-none">Admin Usuario</p>
+<p class="text-xs text-on-surface-variant mt-1">Perfil de Usuario</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-grow ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="glass-nav sticky top-0 z-20 px-10 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<h2 class="font-headline text-xl font-bold text-on-surface">SFRV-PB</h2>
+<span class="text-outline-variant opacity-30">|</span>
+<span class="text-sm text-on-surface-variant font-medium">Historial de Ventas</span>
+</div>
+<div class="flex items-center gap-6">
+
+<div class="flex flex-col items-end gap-1">
+<p id="header-user" class="text-sm font-bold text-on-surface leading-none">Cargando...</p>
+<p id="header-role" class="text-[10px] text-on-surface-variant uppercase tracking-widest">Cargando...</p>
+</div>
+<button onclick="logout()" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors" title="Cerrar sesión">
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+</header>
+<div class="p-10 max-w-7xl mx-auto">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+<div class="space-y-2">
+<span class="font-label text-xs tracking-[0.15em] text-primary font-bold uppercase">Registros Maestros</span>
+<h3 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface">Historial de Ventas</h3>
+<p class="text-on-surface-variant max-w-md">Analiza y gestiona el flujo de transacciones diarias con reportes detallados y filtrado dinámico.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-lowest flex items-center p-1 rounded-full border border-outline-variant/10">
+<button id="filter-all" class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface font-medium text-sm">Todo</button>
+<button id="filter-today" class="px-6 py-2 rounded-full text-on-surface-variant font-medium text-sm hover:bg-surface-container-low transition-colors">Hoy</button>
+<button id="filter-month" class="px-6 py-2 rounded-full text-on-surface-variant font-medium text-sm hover:bg-surface-container-low transition-colors">Mes</button>
+</div>
+<button id="export-report" class="signature-gradient text-on-primary px-8 py-3 rounded-full flex items-center gap-3 shadow-lg shadow-primary-container/40 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg">file_download</span>
+<span class="font-bold text-sm">EXPORTAR REPORTE</span>
+</button>
+</div>
+</section>
+<!-- Stats Overview (Asymmetric Bento) -->
+<section class="grid grid-cols-12 gap-6 mb-16">
+<div class="col-span-12 lg:col-span-7 bg-surface-container-lowest p-8 rounded-lg shadow-sm flex flex-col justify-between min-h-[220px]">
+<div>
+<span class="font-label text-xs tracking-widest text-on-surface-variant uppercase">Volumen Total</span>
+<h4 class="text-5xl font-headline font-extrabold text-on-surface mt-2">$24,850.00</h4>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">trending_up</span>
+<span>+12.5% respecto al mes pasado</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-2 bg-primary-container/30 p-8 rounded-lg flex flex-col justify-between border border-primary-container/20">
+<span class="material-symbols-outlined text-primary text-3xl">receipt_long</span>
+<div class="mt-4">
+<p class="text-sm font-medium text-on-primary-container opacity-80">Órdenes</p>
+<p id="total-orders" class="text-3xl font-headline font-bold text-on-primary-container">0</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-3 bg-secondary-container p-8 rounded-lg flex flex-col justify-between">
+<span class="material-symbols-outlined text-secondary text-3xl">bar_chart</span>
+<div class="mt-4">
+<p class="text-sm font-medium text-on-secondary-container opacity-80">Ticket Promedio</p>
+<p id="average-ticket" class="text-3xl font-headline font-bold text-on-secondary-container">$0.00</p>
+</div>
+</div>
+</section>
+<!-- Transactions Grouped -->
+<div id="sales-groups" class="space-y-12"></div>
+<!-- Load More / Pagination -->
+<div class="mt-16 flex justify-center">
+<button class="px-10 py-3 border border-outline-variant/20 text-primary font-bold rounded-full hover:bg-surface-container-low transition-colors flex items-center gap-2">
+                        Cargar Ventas Anteriores
+                        <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Footer Brand Branding -->
+<footer class="mt-20 border-t border-outline-variant/10 p-10 flex flex-col items-center">
+<div class="signature-gradient w-12 h-1 rounded-full mb-6"></div>
+<p class="font-headline font-bold text-on-surface opacity-60">Velvet Petal SFRV-PB</p>
+<p class="text-xs text-on-surface-variant mt-1">© 2024 Todos los derechos reservados. Edición Profesional.</p>
+</footer>
+</main>
+</div>
+<script src="app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const auth = requireAuth();
+    if (!auth) return;
+    setHeaderUserInfo();
+    updateNavigationRole();
+
+    const salesGroups = document.getElementById('sales-groups');
+    const totalOrdersEl = document.getElementById('total-orders');
+    const averageTicketEl = document.getElementById('average-ticket');
+    const today = new Date().toISOString().split('T')[0];
+    const currentMonth = today.substring(0, 7);
+    let sales = [];
+
+    function formatDateLabel(dateString) {
+      const date = new Date(dateString);
+      if (Number.isNaN(date.getTime())) return dateString;
+      const options = { day: 'numeric', month: 'long' };
+      const formatted = date.toLocaleDateString('es-ES', options);
+      const isoDate = date.toISOString().split('T')[0];
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayIso = yesterday.toISOString().split('T')[0];
+      if (isoDate === today) return `Hoy, ${formatted}`;
+      if (isoDate === yesterdayIso) return `Ayer, ${formatted}`;
+      return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+    }
+
+    function renderSaleItem(sale) {
+      const item = document.createElement('div');
+      item.className = 'bg-surface-container-lowest rounded-lg p-6 flex flex-wrap md:flex-nowrap items-center gap-6 group hover:shadow-md transition-shadow';
+      item.innerHTML = `
+        <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined">shopping_bag</span>
+        </div>
+        <div class="flex-grow">
+          <p class="font-bold text-on-surface">Venta #${sale.id_venta}</p>
+          <p class="text-sm text-on-surface-variant mt-1">${new Date(sale.fecha).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })} • ${sale.usuario || 'Desconocido'}</p>
+        </div>
+        <div class="hidden md:block px-4 border-l border-outline-variant/20">
+          <p class="text-xs text-on-surface-variant font-medium">Items</p>
+          <p class="text-sm font-bold">${sale.items || 0} productos</p>
+        </div>
+        <div class="text-right ml-auto">
+          <p class="text-xl font-headline font-extrabold text-on-surface">$${Number(sale.total).toFixed(2)}</p>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-primary py-1 px-2 bg-primary-container/30 rounded-md">Completada</span>
+        </div>
+      `;
+      return item;
+    }
+
+    function renderGroups(salesData) {
+      salesGroups.innerHTML = '';
+      const grouped = salesData.reduce((acc, sale) => {
+        const dateKey = new Date(sale.fecha).toISOString().split('T')[0];
+        if (!acc[dateKey]) acc[dateKey] = [];
+        acc[dateKey].push(sale);
+        return acc;
+      }, {});
+
+      Object.keys(grouped).sort((a, b) => b.localeCompare(a)).forEach(dateKey => {
+        const group = grouped[dateKey];
+        const wrapper = document.createElement('div');
+        wrapper.dataset.date = dateKey;
+
+        const header = document.createElement('div');
+        header.className = 'flex items-center gap-4 mb-6';
+        header.innerHTML = `
+          <h5 class="font-headline text-lg font-bold text-on-surface">${formatDateLabel(dateKey)}</h5>
+          <div class="flex-grow h-[1px] bg-outline-variant/20"></div>
+          <span class="font-label text-xs font-bold text-on-surface-variant">${group.length} VENTAS</span>
+        `;
+
+        const list = document.createElement('div');
+        list.className = 'space-y-4';
+        group.forEach(sale => list.appendChild(renderSaleItem(sale)));
+
+        wrapper.appendChild(header);
+        wrapper.appendChild(list);
+        salesGroups.appendChild(wrapper);
+      });
+    }
+
+    function updateStats(salesData) {
+      const total = salesData.reduce((sum, sale) => sum + Number(sale.total || 0), 0);
+      totalOrdersEl.textContent = salesData.length;
+      averageTicketEl.textContent = salesData.length ? `$${(total / salesData.length).toFixed(2)}` : '$0.00';
+      const mainVolume = document.querySelector('section.grid h4');
+      if (mainVolume) mainVolume.textContent = `$${total.toFixed(2)}`;
+    }
+
+    function applyFilter(filter) {
+      ['filter-all', 'filter-today', 'filter-month'].forEach(id => {
+        const btn = document.getElementById(id);
+        btn.classList.remove('bg-surface-container-high', 'text-on-surface');
+        btn.classList.add('text-on-surface-variant');
+      });
+      const activeBtn = document.getElementById(`filter-${filter}`);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-surface-container-high', 'text-on-surface');
+        activeBtn.classList.remove('text-on-surface-variant');
+      }
+
+      document.querySelectorAll('[data-date]').forEach(group => {
+        const date = group.dataset.date;
+        const visible = filter === 'all' || (filter === 'today' && date === today) || (filter === 'month' && date.startsWith(currentMonth));
+        group.style.display = visible ? 'block' : 'none';
+      });
+    }
+
+    async function loadSales() {
+      try {
+        sales = await apiFetchSales();
+        renderGroups(sales);
+        updateStats(sales);
+        applyFilter('all');
+      } catch (err) {
+        console.error('Error cargando ventas:', err);
+      }
+    }
+
+    document.getElementById('filter-all').addEventListener('click', () => applyFilter('all'));
+    document.getElementById('filter-today').addEventListener('click', () => applyFilter('today'));
+    document.getElementById('filter-month').addEventListener('click', () => applyFilter('month'));
+
+    document.getElementById('export-report').addEventListener('click', () => {
+      const csvHeader = 'ID,Fecha,Usuario,Total,Items\n';
+      const csvRows = sales.map(sale => `"${sale.id_venta}","${new Date(sale.fecha).toLocaleDateString('es-ES')}","${sale.usuario || 'Consumidor Final'}","${Number(sale.total).toFixed(2)}","${sale.items || 0}"`).join('\n');
+      apiExportCsv(`reporte-ventas-${today}.csv`, csvHeader + csvRows);
+    });
+
+    await loadSales();
+  });
+</script>
+</body></html>
